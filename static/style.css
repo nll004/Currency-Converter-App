@@ -1,0 +1,43 @@
+body {
+    background-color: rgb(201, 243, 229);
+}
+
+h1 {
+    width: 50vw;
+    position: relative;
+    left: 25%;
+    text-align: center;
+    margin: 2rem 0;
+    color: black;
+}
+
+h2 {
+    padding-top: 20px;
+}
+
+form {
+    width: 40vw;
+    position: relative;
+    left: 30%;
+    background-color: azure;
+    border-radius: 10px;
+    text-align: center;
+}
+
+label {
+    display: inline-block;
+    color: rgb(201, 48, 48);
+    font-size: 1.5rem;
+}
+
+input {
+    display: inline-block;
+    padding: 5px;
+    margin: 8px;
+    width: 90%;
+}
+
+button {
+    display: inline-block;
+    margin-bottom: 15px;
+}

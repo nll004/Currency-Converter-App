@@ -9,7 +9,7 @@ def currency_home():
     '''Render form for currency conversion and display results once submitted'''
 
     if request.method == 'POST':
-        '''Once form is posted, handle data, return the result while handling for invalid numbers and invalid currencies'''
+        '''Once form is posted, handle data, return the result at the top of the form'''
 
         c = CurrencyRates()
         code = CurrencyCodes()
@@ -19,7 +19,7 @@ def currency_home():
         amount = request.form.get('amount')
         symb = code.get_symbol(conv_to)
 
-        # convert amount to a float. If a non-number is passed in it will raise a Value error
+        # convert amount value to a float. If a nonnumerical value is passed in it will raise a Value error
         # if either currency is not valid it will raise RatesNotAvailableError
         # convert currency using form data then round to 2 decimal places before passing back to the webpage
         try:
@@ -30,7 +30,7 @@ def currency_home():
             result = "Make sure the amount is a valid number"
 
         except RatesNotAvailableError:
-            result = "Recheck your currency code"
+            result = "Recheck your currency codes"
 
         finally:
             return render_template("home.html", result= result)
