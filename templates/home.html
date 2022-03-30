@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/style.css">
+    <title>Currency Converter</title>
+</head>
+<body>
+    {% block page_content %}
+    <h1>Currency Converter</h1>
+    <form action="/" id="conversion-form" method="POST">
+        {% if result %}
+            <h2 id="result"> {{ result }}</h2>
+        {% endif %}
+        <label for="convert-from">Converting From:</label>
+        <input type="text" name="convert-from" placeholder="Insert currency code" required>
+        <label for="convert-to">Convert To:</label>
+        <input type="text" name="convert-to" placeholder="Insert currency code" required>
+        <label for="amount">Amount:</label>
+        <input type="text" name="amount" value="1" required>
+        <button>Convert</button>
+    </form>
+    {% endblock %}
+</body>
+</html>
